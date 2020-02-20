@@ -2,6 +2,6 @@
 
 int main()
 {
-  runtime::test();
+  runtime::demo();
   return 0;
 }
