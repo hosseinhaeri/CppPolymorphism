@@ -2,20 +2,21 @@
 #include <string>
 #include <vector>
 
+namespace runtime
+{
+
 using std::cout;
 using std::endl;
 using std::string;
 using std::vector;
 using std::cin;
 
-namespace runtime
-{
-
 //The Hierarchy*****************************************************************************
 class Shape
 {
 public:
   virtual void prompt() const = 0;
+  virtual ~Shape() {}
 };
 //------------------------------------------------------------------------------------------
 class Circle: public Shape
@@ -88,6 +89,9 @@ void demo()
   //   else if(auto tp = dynamic_cast<Triangle*>(sp))
   //     tp->prompt();
   // }
+
+  for(auto sp: shapes)
+    delete sp;
 }
 
 }//namespace runtime
